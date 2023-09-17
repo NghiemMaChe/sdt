@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    .phone-info {
+      margin-bottom: 20px;
+    }
+
+    .area-code {
+      color: #007BFF;
+    }
+
+    .phone-number {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin: 0 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Nhập số điện thoại</h1>
+    <div class="phone-info">
+      <span class="area-code">Mã vùng: +84</span>
+      <div id="count" class="phone-number">559261700</div>
+    </div>
+    <div class="button-container">
+      <button id="plus">+</button>
+      <button id="minus">-</button>
+    </div>
+	<br>
+	<button id="submit">Gửi</button>
+  </div>
+
+  <script>
+    const count = document.querySelector("#count");
+    const plusButton = document.querySelector("#plus");
+    const minusButton = document.querySelector("#minus");
+	const submitButton = document.querySelector("#submit");
+
+    function increase() {
+      count.textContent = parseInt(count.textContent) + 1;
+    }
+
+    function decrease() {
+      count.textContent = parseInt(count.textContent) - 1;
+    }
+	
+	function displayMessage() {
+      alert("Thông tin đã được lưu");
+    }
+
+
+    plusButton.addEventListener("click", increase);
+    minusButton.addEventListener("click", decrease);
+	submitButton.addEventListener("click", displayMessage);
+  </script>
+</body>
+</html>
